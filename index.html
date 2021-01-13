@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>::딸기들::</title>
+  <link rel="stylesheet" href="lib/straw.css">
+</head>
+<body>
+  <h1> ♧ 점수 : <span id="score">0</span></h1>
+  <h2> ♣ 딸기 > <span id="msg">안뇽!?</span></h2>
+  <div id="space">
+    <div id="moon" ><img src="image/a-strawberry.png" onclick="scoreup()" ondragstart="scoreup()"></div>
+  </div>
+  <script src="lib\berrys.js"></script>
+  <script src="lib\module.js"></script>
+  <script type="text/javascript">
+document.documentElement.addEventListener('touchstart', function (event) {
+      if (event.touches.length > 1) {
+          event.preventDefault(); 
+        } 
+      }, false);
+var lastTouchEnd = 0; 
+document.documentElement.addEventListener('touchend', function (event) {
+    var now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 10) {
+          event.preventDefault(); 
+        } lastTouchEnd = now; 
+    }, false);
+  </script>
+</body>
+</html>
